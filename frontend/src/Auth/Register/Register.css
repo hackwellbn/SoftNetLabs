@@ -1,0 +1,64 @@
+.register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.register h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 40%;
+  margin: 0 auto;}
+
+.register-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #fff;
+  width: 100%;
+}
+
+.register-form input {
+  padding: 12px 24px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: transparent;
+  margin-top: 0.3rem;
+  width: 100%;
+}
+
+
+.message {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: green;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .register-form {
+    width: 90%;
+  }
+  
+}
+
+ input::placeholder {
+      color: #888; /* Change to your desired color */
+      opacity: 1; /* Ensures full visibility */
+    }
+
+input::grammar-error{
+  color: red;
+  font-weight: bold;
+}
+
+input{
+  color: #fff;
+}

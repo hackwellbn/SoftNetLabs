@@ -1,0 +1,114 @@
+/* SoftNet contact — matches softnet(1).html chrome */
+
+.sn-contact {
+  --bg: #f5f1ea;
+  --ink: #000;
+  --blue: #462fd6;
+  --line: 1.3px;
+  min-height: 60vh;
+  padding: 64px 0 96px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Outfit, "Helvetica Neue", system-ui, -apple-system, Arial, sans-serif;
+}
+
+.sn-contact-wrap {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.sn-contact h1 {
+  margin: 0 0 18px;
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.08;
+  color: var(--ink);
+}
+
+.sn-contact .sn-contact-lede {
+  margin: 0 0 28px;
+  max-width: 340px;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.sn-contact .sn-contact-meta {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.sn-contact .sn-contact-meta a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.sn-contact-form {
+  border: var(--line) solid #000;
+  border-radius: 26px;
+  padding: 28px;
+  background: transparent;
+}
+
+.sn-contact-form input,
+.sn-contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 0 0 12px;
+  border: var(--line) solid #000;
+  border-radius: 0;
+  background: #fffdf9;
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.sn-contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.sn-contact-form button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 15px 24px;
+  border: 0;
+  border-radius: 0;
+  background: var(--blue);
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sn-contact-form button:hover {
+  background: #000;
+}
+
+.sn-contact-form .status {
+  margin: 14px 0 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .sn-contact-wrap {
+    grid-template-columns: 1fr;
+    width: calc(100% - 40px);
+  }
+}
+
+/* legacy alias */
+.contact-form {
+  display: contents;
+}

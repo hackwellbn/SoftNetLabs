@@ -1,0 +1,40 @@
+.philosophy h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 2.2rem;
+}
+
+.philosophy-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+}
+
+.philosophy-text h3,
+.philosophy-principles h3 {
+  margin-bottom: 0.8rem;
+}
+
+.philosophy-text p {
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.philosophy-principles ul {
+  list-style: none;
+  padding: 0;
+}
+
+.philosophy-principles li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .philosophy-content {
+    grid-template-columns: 1fr;
+  }
+}

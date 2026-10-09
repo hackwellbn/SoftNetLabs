@@ -1,0 +1,322 @@
+/* GravityPileNotFound.css
+   Plain-CSS equivalent of the Tailwind utility classes used in
+   GravityPileNotFound.jsx. Breakpoint below matches Tailwind's default
+   `md:` (min-width: 768px). Swap `--gp-font-display / -kicker / -body`
+   for real font stacks — the originals came from a `font-display`,
+   `font-kicker`, `font-body` Tailwind config that isn't included here. */
+
+:root {
+  --gp-ink: #141414;
+  --gp-accent: #c8ff4d;
+  --gp-bg: #f4f5f3;
+  --gp-print-bg: #e6e7e4;
+  --gp-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --gp-font-display: "Neue Montreal", "Helvetica Neue", Arial, sans-serif;
+  --gp-font-kicker: "Neue Montreal", "Helvetica Neue", Arial, sans-serif;
+  --gp-font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- layout shell ---------- */
+
+.gp-section {
+  position: relative;
+  width: 100%;
+  min-height: 720px;
+  overflow: hidden;
+  background: var(--gp-bg);
+}
+
+@media (min-width: 768px) {
+  .gp-section { min-height: 860px; }
+}
+
+.gp-header {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80rem; /* max-w-7xl */
+  padding: 0 1.25rem;
+  padding-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .gp-header {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 2rem;
+  }
+}
+
+/* ---------- nav ---------- */
+
+.gp-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.gp-kicker {
+  font-family: var(--gp-font-kicker);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: var(--gp-ink);
+  text-transform: uppercase;
+}
+
+.gp-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gp-nav-link {
+  position: relative;
+  display: inline-block;
+  font-family: var(--gp-font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(20 20 20 / 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.gp-nav-link:hover { color: var(--gp-ink); }
+
+/* ---------- underline (used in nav links and the archive link) ---------- */
+
+.gp-underline {
+  position: absolute;
+  bottom: -0.125rem;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.3s var(--gp-ease);
+}
+
+.gp-group:hover .gp-underline { transform: scaleX(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .gp-underline { transition: none; }
+}
+
+/* ---------- hero ---------- */
+
+.gp-hero {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .gp-hero { margin-top: 4rem; }
+}
+
+.gp-title {
+  font-family: var(--gp-font-display);
+  font-size: clamp(5rem, 18vw, 14rem);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  color: var(--gp-ink);
+  margin: 0;
+}
+
+.gp-subtitle {
+  margin: 1rem 0 0;
+  font-family: var(--gp-font-display);
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--gp-ink);
+}
+
+@media (min-width: 768px) {
+  .gp-subtitle { font-size: 28px; }
+}
+
+.gp-body {
+  margin: 1rem 0 0;
+  max-width: 44ch;
+  font-family: var(--gp-font-body);
+  font-size: 14.5px;
+  line-height: 1.625;
+  color: rgb(20 20 20 / 0.6);
+}
+
+@media (min-width: 768px) {
+  .gp-body { font-size: 15.5px; }
+}
+
+.gp-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.75rem;
+  row-gap: 1rem;
+}
+
+.gp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--gp-ink);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--gp-font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.gp-btn-primary:hover { background: #2c2c2c; }
+
+.gp-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--gp-font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--gp-ink);
+  text-decoration: none;
+}
+
+.gp-arrow {
+  height: 1rem;
+  width: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.gp-group:hover .gp-arrow { transform: translateX(0.125rem); }
+
+@media (prefers-reduced-motion: reduce) {
+  .gp-arrow { transition: none; }
+}
+
+.gp-hint {
+  margin: 1.25rem 0 0;
+  font-family: var(--gp-font-body);
+  font-size: 12.5px;
+  color: rgb(20 20 20 / 0.62);
+}
+
+/* ---------- the pile ---------- */
+
+.gp-pile {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.gp-tile {
+  position: absolute;
+  bottom: calc(var(--b) * 0.45);
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+  overflow: hidden;
+  border-radius: 6px;
+  user-select: none;
+}
+
+.gp-tile:active { cursor: grabbing; }
+
+@media (min-width: 768px) {
+  .gp-tile { bottom: var(--b); }
+}
+
+.gp-tile-word {
+  display: grid;
+  height: 2.25rem;
+  place-items: center;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .gp-tile-word { height: 2.5rem; }
+}
+
+.gp-tile-print {
+  height: calc(var(--h) * 0.78);
+  width: calc(var(--w) * 0.78);
+  background: var(--gp-print-bg);
+}
+
+@media (min-width: 768px) {
+  .gp-tile-print {
+    height: var(--h);
+    width: var(--w);
+  }
+}
+
+.gp-word-text {
+  font-family: var(--gp-font-kicker);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+  color: var(--gp-ink);
+  text-transform: uppercase;
+}
+
+.gp-print-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------- reset control ---------- */
+
+.gp-reset {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--gp-font-kicker);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: rgb(20 20 20 / 0.6);
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.gp-reset:hover { color: var(--gp-ink); }
+
+@media (min-width: 768px) {
+  .gp-reset { right: 2.5rem; bottom: 2rem; }
+}
+
+.gp-reset-icon {
+  height: 0.875rem;
+  width: 0.875rem;
+  transition: transform 0.5s var(--gp-ease);
+}
+
+.gp-group:hover .gp-reset-icon { transform: rotate(-90deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .gp-reset-icon { transition: none; }
+}

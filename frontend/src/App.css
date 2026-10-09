@@ -1,0 +1,146 @@
+:root {
+  /* SoftNet mockup palette — softnet(1).html */
+  --primary-background-color: #f5f1ea;
+  --secondary-background-color: #ece6dc;
+  --text-color: #000000;
+  --text-muted-color: rgba(0 0 0 / 0.62);
+  --text-tertiary-color: rgba(0 0 0 / 0.40);
+  --accent-color: #ec4be6;
+  --highlight-color: #fa4e8a;
+  --link-color: #000000;
+  --border-color: #000000;
+  --card-background-color: #fffdf9;
+
+  --brand-magenta: #ec4be6;
+  --brand-coral: #fa4e8a;
+  --brand-indigo: #462fd6;
+  --brand-line: 1.3px;
+
+  --deep-charcoal: #000000;
+  --muted-indigo: #462fd6;
+  --magenta-glow: rgba(236 75 230 / 0.18);
+  --coral-glow: rgba(250 78 138 / 0.14);
+
+  --primary-bg: #f5f1ea;
+  --secondary-bg: linear-gradient(135deg, #ec4be6, #462fd6);
+
+  --nav-bg: #f5f1ea;
+  --nav-bg-scrolled: #f5f1ea;
+  --nav-border: rgba(0 0 0 / 0.12);
+  --nav-text: #000000;
+  --nav-text-muted: rgba(0 0 0 / 0.62);
+  --nav-surface: rgba(0 0 0 / 0.06);
+  --nav-surface-hover: rgba(0 0 0 / 0.10);
+  --nav-text-scrolled: #000000;
+  --nav-text-muted-scrolled: rgba(0 0 0 / 0.62);
+  --nav-surface-scrolled: rgba(0 0 0 / 0.06);
+  --nav-surface-hover-scrolled: rgba(0 0 0 / 0.10);
+  --surface-color: rgba(0 0 0 / 0.06);
+  --surface-hover: rgba(0 0 0 / 0.12);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --nav-height: 96px;
+  --nav-height-scrolled: 96px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: Outfit, "Helvetica Neue", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+  background: var(--primary-background-color);
+  color: var(--text-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-indigo);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 24px;
+  border: 0;
+  border-radius: 0;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-k {
+  background: #000;
+  color: #fff;
+  padding: 13px 20px;
+  font-size: 14px;
+}
+
+.btn-k:hover {
+  background: var(--brand-indigo);
+  color: #fff;
+}
+
+.btn-b {
+  background: var(--brand-indigo);
+  color: #fff;
+}
+
+.btn-b:hover {
+  background: #000;
+  color: #fff;
+}
+
+button:not(.btn):not(.btn-k):not(.btn-b):not(.site-navbar-dropdown-trigger):not(.site-navbar-signout):not(.site-navbar-toggle):not(.sn-hero-step) {
+  background: var(--surface-color);
+  color: var(--text-color);
+  border: var(--brand-line) solid var(--border-color);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 0;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+p {
+  color: var(--text-muted-color);
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-background-color);
+}

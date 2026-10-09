@@ -1,0 +1,231 @@
+/* Display.css */
+
+.display {
+  padding: 140px 0;
+  background-color: var(--primary-background-color);
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.display .container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Intro Section - Editorial Style */
+.display-intro {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.display-intro h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 0.95;
+  margin-bottom: 25px;
+  color: var(--text-color);
+}
+
+.sub-header {
+  font-size: 1.25rem;
+  color: var(--text-muted-color);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Feature Layout */
+.cards_display {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.card_display {
+  flex: 1;
+}
+
+/* Screenshot Display - "Floating Cloud" Precision Shadow */
+  .screenshot-wrapper {
+    position: relative;
+    border-radius: 16px;
+    background: var(--primary-background-color);
+    padding: 8px;
+    border: 1px solid var(--border-color);
+  /* Multi-layered shadow for a premium 3D lift */
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.04),
+    0 40px 80px rgba(0, 0, 0, 0.08);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.screenshot-wrapper:hover {
+  transform: translateY(-15px) scale(1.02);
+}
+
+.screenshot-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* Decorative Glow behind the image - using your light purple link color at low opacity */
+.screenshot-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130%;
+  height: 130%;
+  background: radial-gradient(circle, rgba(187, 134, 252, 0.08) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Text Side Styling */
+  .product-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted-color);
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    padding: 6px 14px;
+    border-radius: 4px;
+  }
+
+.dot {
+  width: 8px;
+  height: 8px;
+   background: var(--accent-color); /* Live Status */
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--magenta-glow);
+}
+
+.text-side h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: var(--text-color);
+  letter-spacing: -1px;
+}
+
+.text-side p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-muted-color);
+  margin-bottom: 45px;
+}
+
+/* FIXED BUTTON COLORS FOR WHITE BACKGROUND */
+.btns {
+  display: flex;
+  gap: 20px;
+}
+
+/* Primary Button: themed accent */
+.btn {
+  background-color: var(--accent-color) !important;
+  color: var(--primary-background-color) !important;
+  padding: 18px 36px;
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: var(--brand-indigo) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary Button: Clean Editorial Outline */
+._btn {
+  background-color: transparent !important;
+  color: var(--text-color) !important;
+  border: 1.5px solid var(--border-color) !important;
+  padding: 18px 36px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+._btn:hover {
+  border-color: var(--text-color) !important;
+  background: var(--surface-color) !important;
+  transform: translateY(-3px);
+}
+
+/* Background Decoration - Engineering Grid lines */
+.display::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(var(--surface-hover) 1px, transparent 1px),
+    linear-gradient(90deg, var(--surface-hover) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.6;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Responsive Logic */
+@media (max-width: 1024px) {
+  .cards_display {
+    flex-direction: column;
+    text-align: center;
+    gap: 70px;
+  }
+  
+  .btns {
+    justify-content: center;
+  }
+
+  .sub-header {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .display {
+    padding: 80px 0;
+  }
+  
+  .btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn, ._btn {
+    width: 100%;
+    padding: 16px;
+  }
+  
+  .screenshot-wrapper:hover {
+    transform: none; /* Disable 3D hover on touch devices */
+  }
+}

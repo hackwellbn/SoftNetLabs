@@ -1,0 +1,77 @@
+/* manifesto.css · converted 1:1 from the Tailwind classes used by
+   TintShiftManifesto */
+
+.tsm {
+  width: 100%;
+  padding: 96px 20px;
+}
+
+@media (min-width: 768px) {
+  .tsm {
+    padding: 128px 40px;
+  }
+}
+
+.tsm__container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.tsm__top-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+/* Shared by the header brand mark and every passage's own kicker. */
+.tsm__kicker {
+  font-family: var(--font-kicker, inherit);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Shared by the header's right-hand label and each passage's index. */
+.tsm__meta {
+  font-family: var(--font-kicker, inherit);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.tsm__passage {
+  display: flex;
+  min-height: 64vh;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+@media (min-width: 768px) {
+  .tsm__passage {
+    min-height: 70vh;
+  }
+}
+
+.tsm__head {
+  margin-top: 20px;
+  max-width: 24ch;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.8rem, 4.4vw, 3.2rem);
+  line-height: 1.16;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.tsm__text {
+  margin-top: 20px;
+  max-width: 44ch;
+  font-family: var(--font-display, inherit);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.tsm__index {
+  margin-top: 40px;
+}

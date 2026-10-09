@@ -1,0 +1,37 @@
+.service_card_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    text-align: left;
+    margin: 20px;
+  }
+  
+  .card_services {
+    background-color: linear-gradient(rgba(37, 34, 34), rgba(94, 16, 16));
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    border: 1px solid #fff;
+  }
+  
+  .card_services h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .card_services p {
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .card_services img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }

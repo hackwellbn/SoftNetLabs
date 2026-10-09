@@ -1,0 +1,120 @@
+/* SoftNet mockup footer — softnet(1).html */
+
+.sn-footer {
+  --pf-bg: #f5f1ea;
+  --pf-ink: #000;
+  --pf-blue: #462fd6;
+  --pf-line: 1.3px;
+  margin-top: auto;
+  border-top: var(--pf-line) solid var(--pf-ink);
+  padding: 56px 0 30px;
+  background: var(--pf-bg);
+  color: var(--pf-ink);
+  font-family: Outfit, "Helvetica Neue", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.sn-footer *,
+.sn-footer *::before,
+.sn-footer *::after {
+  box-sizing: border-box;
+}
+
+.sn-footer-wrap {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.sn-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 32px;
+  font-size: 14px;
+}
+
+.sn-footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  font-size: 19px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.sn-footer-mark {
+  display: block;
+  width: 38px;
+  height: 31px;
+  flex: none;
+}
+
+.sn-footer-brand p {
+  max-width: 260px;
+  margin: 14px 0 0;
+  font-size: 14px;
+}
+
+.sn-footer h4 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.sn-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sn-footer li {
+  margin-bottom: 9px;
+}
+
+.sn-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sn-footer li a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.sn-footer a:focus-visible {
+  outline: 2px solid var(--pf-blue);
+  outline-offset: 3px;
+}
+
+.sn-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 48px;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .sn-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sn-footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .sn-footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .sn-footer-wrap {
+    width: calc(100% - 40px);
+  }
+}
+
+/* Legacy class kept so any remaining .footer references don't break layout */
+.footer {
+  display: contents;
+}

@@ -1,0 +1,55 @@
+.your-info-page {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-color, #2c3e50);
+}
+
+.info-section {
+  margin-bottom: 30px;
+}
+
+.info-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.info-card {
+
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.label {
+  font-weight: 600
+}
+
+.value {
+  color: #fff;
+}
+
+.btn-primary {
+  background: var(--primary-blue, #4A90E2);
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-secondary {
+  background: var(--primary-yellow, #FFC107);
+  color: #2c3e50;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}

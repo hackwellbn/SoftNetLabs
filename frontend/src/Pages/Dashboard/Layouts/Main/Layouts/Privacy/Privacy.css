@@ -1,0 +1,94 @@
+/* Privacy.css */
+
+/* Root Variables for Consistency */
+:root {
+  
+  --privacy-text: #fff;
+  --privacy-heading: #fff;
+  --privacy-accent: #4a90e2;
+  --privacy-border: #ddd;
+}
+
+/* Main Container */
+.privacy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--privacy-bg);
+  color: var(--privacy-text);
+  line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headings */
+.privacy-container h1,
+.privacy-container h2,
+.privacy-container h3 {
+  color: var(--privacy-heading);
+  margin-bottom: 1rem;
+}
+
+.privacy-container h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--privacy-accent);
+  padding-bottom: 0.5rem;
+}
+
+.privacy-container h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.privacy-container h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+/* Paragraphs */
+.privacy-container p {
+  margin-bottom: 1rem;
+}
+
+/* Lists */
+.privacy-container ul {
+  padding-left: 1.5rem;
+}
+
+.privacy-container li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links */
+.privacy-container a {
+  color: var(--privacy-accent);
+  text-decoration: none;
+}
+
+.privacy-container a:hover {
+  text-decoration: underline;
+}
+
+/* Info Box */
+.privacy-info-box {
+  background: #eef5ff;
+  border: 1px solid var(--privacy-border);
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-container {
+    padding: 1.5rem;
+  }
+
+  .privacy-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .privacy-container h2 {
+    font-size: 1.3rem;
+  }
+}

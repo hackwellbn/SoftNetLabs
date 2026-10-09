@@ -1,0 +1,186 @@
+/* explanations.css · converted 1:1 from the original Tailwind classes
+   used by WordRailStatement */
+
+.wrs {
+  position: relative;
+  display: flex;
+  min-height: 640px;
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+  background: #e3df8f;
+  color: var(--text-color);
+}
+
+@media (min-width: 768px) {
+  .wrs {
+    min-height: 720px;
+  }
+}
+
+.wrs__kicker-wrap {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+}
+
+.wrs__kicker-inner {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 24px 20px 0;
+}
+
+@media (min-width: 768px) {
+  .wrs__kicker-inner {
+    padding: 32px 40px 0;
+  }
+}
+
+.wrs__kicker {
+  font-family: var(--font-kicker, inherit);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.wrs__content {
+  position: relative;
+  width: 100%;
+  padding-left: 8%;
+}
+
+@media (min-width: 768px) {
+  .wrs__content {
+    padding-left: 36%;
+  }
+}
+
+.wrs__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Shared type treatment: the fixed pair and the rail row read from the same
+   metrics, so both lines line up. */
+.wrs__type {
+  font-family: var(--font-display, inherit);
+  font-size: clamp(2.8rem, 7vw, 6.5rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.wrs__pair-line {
+  display: block;
+}
+
+.wrs__rail-wrap {
+  width: 100%;
+}
+
+.wrs__rail-group {
+  position: relative;
+  cursor: grab;
+  user-select: none;
+}
+
+.wrs__rail-group:active {
+  cursor: grabbing;
+}
+
+.wrs__rail-group:focus-visible {
+  outline: 1px dashed rgba(15, 31, 20, 0.35);
+  outline-offset: 10px;
+}
+
+.wrs__row {
+  position: relative;
+  display: flex;
+  width: max-content;
+  gap: 0.6em;
+  white-space: nowrap;
+}
+
+.wrs__word {
+  display: block;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wrs__word.is-active {
+  cursor: inherit;
+}
+
+.wrs__footer-wrap {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+}
+
+.wrs__footer-inner {
+  margin: 0 auto;
+  display: flex;
+  max-width: 1280px;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 20px 24px;
+}
+
+@media (min-width: 640px) {
+  .wrs__footer-inner {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrs__footer-inner {
+    padding: 0 40px 32px;
+  }
+}
+
+.wrs__footer-text {
+  font-family: var(--font-body, inherit);
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.wrs__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display, inherit);
+  font-size: 14px;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrs__cta-icon {
+  height: 16px;
+  width: 16px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wrs__cta:hover .wrs__cta-icon {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrs__cta-icon {
+    transition: none;
+  }
+}

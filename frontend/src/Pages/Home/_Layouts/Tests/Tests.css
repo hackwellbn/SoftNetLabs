@@ -1,0 +1,18 @@
+
+.background {
+    height: 100%;
+    background: linear-gradient(135deg, #ff6f91, #d5006d); /* Pink to Purple */
+    position: relative;
+}
+
+.cursor-gradient {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: background 0.3s ease;
+    mix-blend-mode: multiply;
+    opacity: 0.8;
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+    background: radial-gradient(circle, rgba(255, 105, 180, 0.5), rgba(255, 20, 147, 0) 70%); /* Pink to transparent */
+}

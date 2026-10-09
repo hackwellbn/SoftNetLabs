@@ -1,0 +1,210 @@
+/* ShapeMorphProcess.css · converted 1:1 from the original Tailwind classes */
+
+.smp {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+  padding: 80px 20px;
+}
+
+@media (min-width: 768px) {
+  .smp {
+    padding: 112px 40px;
+  }
+}
+
+.smp__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -20;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 72%;
+}
+
+.smp__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+.smp__grid {
+  margin: 0 auto;
+  display: grid;
+  max-width: 1152px;
+  align-items: center;
+  gap: 48px;
+}
+
+@media (min-width: 768px) {
+  .smp__grid {
+    grid-template-columns: 1fr 0.95fr;
+    gap: 64px;
+  }
+}
+
+.smp__eyebrow {
+  font-family: var(--font-body, inherit);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.smp__heading {
+  margin-top: 16px;
+  font-family: var(--font-display, inherit);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .smp__heading {
+    font-size: 44px;
+  }
+}
+
+.smp__sub {
+  margin-top: 18px;
+  max-width: 46ch;
+  font-family: var(--font-body, inherit);
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.smp__list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.smp__step {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .smp__step {
+    padding: 14px 16px;
+  }
+}
+
+.smp__step:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smp__step {
+    transition: none;
+  }
+}
+
+.smp__step-number {
+  font-family: var(--font-display, inherit);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.3s ease;
+}
+
+.smp__step.is-active .smp__step-number {
+  color: #f3c6d1;
+}
+
+.smp__step-body {
+  min-width: 0;
+}
+
+.smp__step-title {
+  display: block;
+  font-family: var(--font-display, inherit);
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.3s ease;
+}
+
+.smp__step.is-active .smp__step-title {
+  color: #ffffff;
+}
+
+.smp__step-desc {
+  margin-top: 4px;
+  display: block;
+  overflow: hidden;
+  font-family: var(--font-body, inherit);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.smp__step.is-active .smp__step-desc {
+  max-height: 48px;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smp__step-number,
+  .smp__step-title,
+  .smp__step-desc {
+    transition: none;
+  }
+}
+
+.smp__shape-wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 440px;
+}
+
+.smp__svg {
+  display: block;
+  width: 100%;
+}
+
+.smp__number-wrap {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.smp__number-text {
+  font-family: var(--font-display, inherit);
+  font-size: 64px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #241c22;
+}
+
+@media (min-width: 768px) {
+  .smp__number-text {
+    font-size: 76px;
+  }
+}

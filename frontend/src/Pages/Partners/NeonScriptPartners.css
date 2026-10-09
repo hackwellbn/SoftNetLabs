@@ -1,0 +1,190 @@
+.nsp-section {
+  /* Neonorange. In oklch notiert und nicht als Hex: auf einem Schirm mit
+     breitem Farbraum zeigt der Browser damit mehr Farbe, als sRGB hergibt,
+     und genau das ist der Neon-Eindruck. Auf schmalem Farbraum faellt es auf
+     das naechste sRGB-Orange zurueck, also ungefaehr auf ff6a00. */
+  --nsp-neon: #ff6a00;
+  --nsp-neon: oklch(0.78 0.23 48);
+
+  /* Diese vier Font-Klassen aus dem Original-Tailwind-Setup sind hier als
+     Variablen platziert — die tatsaechlichen Font-Stacks im Projekt
+     eintragen. */
+  --nsp-font-display: Outfit, "Helvetica Neue", system-ui, sans-serif;
+  --nsp-font-serif: Outfit, "Helvetica Neue", system-ui, sans-serif;
+  --nsp-font-kicker: Outfit, "Helvetica Neue", system-ui, sans-serif;
+  --nsp-font-body: Outfit, "Helvetica Neue", system-ui, sans-serif;
+  --nsp-font-hand: Outfit, "Helvetica Neue", system-ui, sans-serif;
+
+  position: relative;
+  display: flex;
+  min-height: 780px;
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+  background: #f5f1ea;
+  padding: 112px 0;
+  border-top: 1.3px solid #000;
+}
+
+.nsp-grain {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  background-size: 120px 120px;
+}
+
+.nsp-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 72rem;
+  padding: 0 24px;
+}
+
+.nsp-grid {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  gap: 40px;
+}
+
+.nsp-heading {
+  font-family: var(--nsp-font-display);
+  font-size: clamp(2.1rem, 6.4vw, 4.2rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #171717;
+  text-transform: uppercase;
+}
+
+.nsp-heading-line {
+  display: block;
+}
+
+.nsp-lede {
+  align-self: flex-start;
+  max-width: 24rem;
+  font-family: var(--nsp-font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: #404040;
+}
+
+.nsp-word {
+  pointer-events: none;
+  display: block;
+  transform: rotate(-7deg);
+  font-family: var(--nsp-font-hand);
+  font-size: clamp(4rem, 25vw, 7rem);
+  line-height: 1.45;
+  letter-spacing: -0.09em;
+  white-space: nowrap;
+  user-select: none;
+  color: var(--nsp-neon);
+}
+
+.nsp-marken {
+  position: relative;
+  z-index: 10;
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 32px 24px;
+}
+
+.nsp-marke {
+  color: #171717;
+}
+
+.nsp-mark-nordkap {
+  font-family: var(--nsp-font-display);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nsp-mark-vellum {
+  font-family: var(--nsp-font-serif);
+  font-size: 22px;
+  letter-spacing: 0.01em;
+}
+
+.nsp-mark-halo {
+  font-family: var(--nsp-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.nsp-mark-kessler {
+  font-family: var(--nsp-font-display);
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid #171717;
+  padding: 4px 10px;
+}
+
+.nsp-mark-orb {
+  font-family: var(--nsp-font-display);
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: -0.05em;
+}
+
+.nsp-mark-meridian {
+  font-family: var(--nsp-font-kicker);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+}
+
+.nsp-mark-tallow {
+  font-family: var(--nsp-font-serif);
+  font-size: 18px;
+  font-style: italic;
+}
+
+/* Medium breakpoint (>=768px), mirrors Tailwind's md: prefix */
+@media (min-width: 768px) {
+  .nsp-section {
+    min-height: 94vh;
+    padding: 160px 0;
+  }
+
+  .nsp-grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+  }
+
+  .nsp-heading {
+    grid-column: span 6 / span 6;
+  }
+
+  .nsp-lede {
+    grid-column: 8 / span 5;
+  }
+
+  /* Hochkant zwei Spalten statt einer umbrechenden Reihe: gesperrt
+     nebeneinander stehen die Namen sonst mal zu zweit, mal zu dritt in
+     einer Zeile, und das liest sich als Versehen. */
+  .nsp-word {
+    position: absolute;
+    top: 52%;
+    left: 31%;
+    transform: translate(-50%, -50%) rotate(-7deg);
+    font-size: min(32vw, 42vh, 27rem);
+    line-height: 1;
+  }
+
+  .nsp-marken {
+    margin-top: 192px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 40px;
+  }
+}

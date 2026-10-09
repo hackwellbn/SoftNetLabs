@@ -1,0 +1,164 @@
+.svc-section {
+  --svc-ink: #1b1b19;
+  --svc-muted: #85857f;
+  width: 100%;
+  background: #fbfbfa;
+  padding: 80px 20px;
+}
+
+.svc-container {
+  margin: 0 auto;
+  max-width: 72rem;
+  display: grid;
+  gap: 48px;
+}
+
+.svc-left {
+  align-self: start;
+}
+
+.svc-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--svc-muted);
+}
+
+.svc-eyebrow-icon {
+  height: 12px;
+  width: 12px;
+}
+
+.svc-heading {
+  margin-top: 24px;
+  font-size: 34px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--svc-ink);
+}
+
+.svc-heading-muted {
+  color: var(--svc-muted);
+}
+
+.svc-description {
+  margin-top: 24px;
+  max-width: 20rem;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #5f6058;
+}
+
+.svc-cta {
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--svc-ink);
+}
+
+.svc-cta-icon {
+  display: grid;
+  place-items: center;
+  height: 32px;
+  width: 32px;
+  border-radius: 9999px;
+  border: 1px solid #d4d4d4;
+}
+
+.svc-cta-icon-svg {
+  height: 14px;
+  width: 14px;
+}
+
+.svc-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.svc-card {
+  border-radius: 18px;
+  background: #fff;
+  padding: 24px;
+}
+
+.svc-card-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.svc-card-text {
+  min-width: 0;
+}
+
+.svc-card-tag {
+  display: block;
+  font-size: 10.5px;
+  color: var(--svc-muted);
+}
+
+.svc-card-title {
+  margin-top: 16px;
+  font-size: 19px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--svc-ink);
+}
+
+.svc-card-body {
+  margin-top: 10px;
+  max-width: 28rem;
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: #7c7d76;
+}
+
+.svc-card-emoji {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  height: 40px;
+  width: 40px;
+  border-radius: 9999px;
+  background: #f3f2ee;
+  font-size: 17px;
+  line-height: 1;
+}
+
+/* Medium breakpoint (>=768px), mirrors Tailwind's md: prefix */
+@media (min-width: 768px) {
+  .svc-section {
+    padding: 112px 40px;
+  }
+
+  .svc-container {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+  }
+
+  .svc-left {
+    position: sticky;
+    top: 64px;
+  }
+
+  .svc-heading {
+    font-size: 46px;
+  }
+
+  .svc-card {
+    padding: 28px 32px;
+  }
+
+  .svc-card-title {
+    font-size: 21px;
+  }
+}

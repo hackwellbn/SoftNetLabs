@@ -1,0 +1,158 @@
+/* Impact.css */
+
+.impact {
+  padding: 120px 0;
+  background-color: var(--primary-background-color);
+  color: var(--text-color);
+  position: relative;
+}
+
+.impact .container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Grid Layout - 3 Equal Columns with large spacing */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.impact-column {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+/* Technical Header in each column */
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.column-number {
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--highlight-color); /* Amber Yellow accent */
+  letter-spacing: 2px;
+}
+
+  .column-line {
+    flex-grow: 1;
+    height: 1px;
+    background: var(--border-color);
+    transition: all 0.5s ease;
+  }
+
+  .impact-column:hover .column-line {
+    background: var(--text-color);
+    transform: scaleX(1.05);
+    transform-origin: left;
+  }
+
+/* Typography Styling */
+.impact-column h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  letter-spacing: -1px;
+  color: var(--text-color);
+}
+
+.impact-column p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted-color);
+  margin-bottom: 40px;
+  flex-grow: 1;
+}
+
+/* Button Styling - Editorial "Link" style for Impact */
+.impact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent-color) !important;
+  color: var(--primary-background-color) !important;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.impact-btn span {
+  transition: transform 0.3s ease;
+}
+
+.impact-btn:hover {
+  background: var(--brand-indigo) !important;
+  color: var(--primary-background-color) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.impact-btn:hover span {
+  transform: translateX(5px);
+}
+
+/* Add a very subtle vertical line between columns on desktop */
+@media (min-width: 1025px) {
+  .impact-column:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: var(--border-color);
+  }
+}
+
+/* Responsive Logic */
+@media (max-width: 1024px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+  
+  .impact-column {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .column-header {
+    justify-content: center;
+  }
+  
+  .column-line {
+    display: none; /* Simplify mobile layout */
+  }
+
+  .impact-column h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .impact {
+    padding: 80px 0;
+  }
+  
+  .impact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

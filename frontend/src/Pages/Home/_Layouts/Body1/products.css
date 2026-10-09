@@ -1,0 +1,198 @@
+/* products.css · converted 1:1 from the Tailwind classes used by
+   PainterlyMarkCards */
+
+.pmc {
+  width: 100%;
+  overflow: hidden;
+  background: var(--primary-background-color);
+  color: var(--text-color);
+  padding: 80px 0;
+}
+
+@media (min-width: 768px) {
+  .pmc {
+    padding: 112px 0;
+  }
+}
+
+.pmc__header {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .pmc__header {
+    padding: 0 40px;
+  }
+}
+
+.pmc__title {
+  font-family: var(--font-display, inherit);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.pmc__lede {
+  margin-top: 12px;
+  max-width: 44ch;
+  font-family: var(--font-body, inherit);
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(15, 31, 20, 0.65);
+}
+
+/* ---- scroller ---- */
+
+.pmc__scroller {
+  margin-top: 48px;
+  margin-bottom: -24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 1.25rem;
+  padding-top: 8px;
+  padding-bottom: 32px;
+  padding-left: max(1.25rem, calc((100% - 80rem) / 2 + 1.25rem));
+  user-select: none;
+  scrollbar-width: none;
+}
+
+.pmc__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .pmc__scroller {
+    scroll-snap-type: none;
+    padding-left: max(2.5rem, calc((100% - 80rem) / 2 + 2.5rem));
+  }
+}
+
+.pmc__list {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .pmc__list {
+    padding-right: 40px;
+  }
+}
+
+.pmc__item {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* ---- card ---- */
+
+.pmc__card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  width: 260px;
+  cursor: inherit;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--surface-color);
+  outline: none;
+}
+
+@media (min-width: 640px) {
+  .pmc__card {
+    width: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .pmc__card {
+    width: 340px;
+  }
+}
+
+.pmc__card:focus-visible {
+  box-shadow: 0 0 0 2px var(--primary-background-color), 0 0 0 4px var(--text-color);
+}
+
+.pmc__image-wrap {
+  position: absolute;
+  inset-inline: 0;
+  top: -12px;
+  bottom: -12px;
+}
+
+.pmc__image {
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+.pmc__scrim {
+  pointer-events: none;
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 58%;
+  background: linear-gradient(
+    to top,
+    rgba(10, 16, 13, 0.82) 0%,
+    rgba(10, 16, 13, 0.66) 26%,
+    rgba(10, 16, 13, 0.34) 52%,
+    rgba(10, 16, 13, 0.08) 76%,
+    transparent 100%
+  );
+}
+
+.pmc__mark-wrap {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+
+.pmc__mark-svg {
+  height: 80px;
+  width: 80px;
+}
+
+@media (min-width: 768px) {
+  .pmc__mark-svg {
+    height: 96px;
+    width: 96px;
+  }
+}
+
+.pmc__caption {
+  pointer-events: none;
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 24px;
+  user-select: none;
+}
+
+.pmc__name {
+  font-family: var(--font-display, inherit);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.pmc__line {
+  margin-top: 6px;
+  max-width: 26ch;
+  font-family: var(--font-body, inherit);
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+}
